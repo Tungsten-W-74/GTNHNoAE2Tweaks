@@ -23,8 +23,10 @@ public class LateMixinsLoader implements ILateMixinLoader {
         return Arrays.asList(
             "InputSeparationIndustrialPress",
             "InputSeparationPreciseAssembler",
+            "InputSeparationZyngen",
             "NoAEEOH",
             "NoAEGorge",
-            "LinkedInputBusAALCompat");
+            "LinkedInputBusAALCompat",
+            "DisableAE");
     }
 }

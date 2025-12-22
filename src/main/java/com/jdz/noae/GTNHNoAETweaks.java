@@ -15,13 +15,14 @@ import cpw.mods.fml.common.event.FMLServerStartingEvent;
     version = Tags.VERSION,
     name = "GTNHNoAETweaks",
     acceptedMinecraftVersions = "[1.7.10]",
+    acceptableRemoteVersions = "*",
     dependencies = "required-after:gregtech")
 public class GTNHNoAETweaks {
 
     public static final String MODID = "gtnhnoaetweaks";
     public static final Logger LOG = LogManager.getLogger(MODID);
 
-    @SidedProxy(clientSide = "com.jdz.noae.ClientProxy", serverSide = "com.jdz.noae.CommonProxy")
+    @SidedProxy(serverSide = "com.jdz.noae.CommonProxy")
     public static CommonProxy proxy;
 
     @Mod.EventHandler
