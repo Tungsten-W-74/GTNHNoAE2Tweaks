@@ -12,9 +12,10 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
     acceptableRemoteVersions = "*",
     dependencies = "required-after:gregtech")
 public class GTNHNoAETweaks {
+
     public static final String MODID = "gtnhnoaetweaks";
 
-    @SidedProxy(serverSide = "com.jdz.noae.CommonProxy")
+    @SidedProxy(clientSide = "com.jdz.noae.CommonProxy", serverSide = "com.jdz.noae.CommonProxy")
     public static CommonProxy proxy;
 
     @Mod.EventHandler
