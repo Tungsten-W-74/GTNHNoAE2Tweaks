@@ -6,7 +6,10 @@ import net.minecraftforge.fluids.FluidStack;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 
+import com.jdz.noae.common.tileentities.MTEHatchOutputUltimate;
+
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
+import gregtech.api.metatileentity.implementations.MTEHatchOutput;
 import gregtech.common.tileentities.machines.MTEHatchInputBusME;
 import tectech.thing.metaTileEntity.multi.MTEEyeOfHarmony;
 import tectech.thing.metaTileEntity.multi.base.TTMultiblockBase;
@@ -76,6 +79,9 @@ abstract class NoAEEOH extends TTMultiblockBase {
     private void outputItemToAENetwork(ItemStack item, long amount) {}
 
     private void outputFluidToAENetwork(FluidStack fluid, long amount) {
+        for (MTEHatchOutput hatch : mOutputHatches)
+            if (hatch instanceof MTEHatchOutputUltimate oHatch) if (oHatch.fillBuffer(fluid, amount)) return;
+
         FluidStack stack = new FluidStack(fluid, amount >= Integer.MAX_VALUE ? Integer.MAX_VALUE : (int) amount);
         if (!dumpFluid(mOutputHatches, stack, true)) {
             dumpFluid(mOutputHatches, stack, false);
