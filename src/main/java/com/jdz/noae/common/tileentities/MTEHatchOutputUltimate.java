@@ -1,5 +1,9 @@
 package com.jdz.noae.common.tileentities;
 
+import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
+import static gregtech.api.util.GTRecipeBuilder.INGOTS;
+import static gregtech.api.util.GTRecipeBuilder.SECONDS;
+
 import java.util.Arrays;
 
 import javax.annotation.Nonnull;
@@ -11,8 +15,10 @@ import net.minecraft.util.EnumChatFormatting;
 import net.minecraftforge.common.util.ForgeDirection;
 import net.minecraftforge.fluids.FluidStack;
 
-import com.jdz.noae.api.enums.MetaTileEntityIDs;
-
+import gregtech.api.enums.GTValues;
+import gregtech.api.enums.ItemList;
+import gregtech.api.enums.MaterialsUEVplus;
+import gregtech.api.enums.TierEU;
 import gregtech.api.interfaces.ITexture;
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
 import gregtech.api.metatileentity.MetaTileEntity;
@@ -24,8 +30,25 @@ public class MTEHatchOutputUltimate extends MTEHatchOutput {
     private long mBuffer = 0;
     private FluidStack mBufferFluid = null;
 
+    public static final int ENTITY_ID = 32340;
+
+    public static void register() {
+        ItemStack instance = new MTEHatchOutputUltimate().getStackForm(1L);
+
+        GTValues.RA.stdBuilder()
+            .itemInputs(
+                ItemList.Hatch_Output_UXV.get(1L),
+                // ItemAndBlockHolder.SINGULARITY_CELL.stack(1),
+                GTUtility.getIntegratedCircuit(17))
+            .fluidInputs(MaterialsUEVplus.Universium.getMolten(4 * INGOTS))
+            .itemOutputs(instance)
+            .duration(1600 * SECONDS)
+            .eut(TierEU.RECIPE_UXV)
+            .addTo(assemblerRecipes);
+    }
+
     public MTEHatchOutputUltimate() {
-        super(MetaTileEntityIDs.Hatch_Output_Ultimate.ID, "Ultimate Output Hatch", "Ultimate Output Hatch", 13);
+        super(ENTITY_ID, "Ultimate Output Hatch", "Ultimate Output Hatch", 13);
         this.mDescriptionArray[1] = "Capacity: " + EnumChatFormatting.BOLD
             + EnumChatFormatting.UNDERLINE
             + "Infinite"

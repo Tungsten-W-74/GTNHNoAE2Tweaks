@@ -1,4 +1,4 @@
-package com.jdz.noae.mixins.late;
+package com.jdz.noae.mixins.late.InputSeparation;
 
 /**
  * press
@@ -16,8 +16,6 @@ package com.jdz.noae.mixins.late;
  * Gorge
  *
  */
-
-import net.minecraft.nbt.NBTTagCompound;
 
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
@@ -39,20 +37,5 @@ abstract class InputSeparationIndustrialPress extends MTEMultiBlockBase {
     @Overwrite(remap = false)
     public boolean isInputSeparationEnabled() {
         return super.isInputSeparationEnabled();
-    }
-
-    @Overwrite(remap = false)
-    public void loadNBTData(NBTTagCompound aNBT) {
-        super.loadNBTData(aNBT);
-
-        if (aNBT.hasKey("mFormingMode")) {
-            machineMode = aNBT.getBoolean("mFormingMode") ? 1 : 0;
-        }
-
-        if (aNBT.hasKey(INPUT_SEPARATION_NBT_KEY)) {
-            inputSeparation = aNBT.getBoolean(INPUT_SEPARATION_NBT_KEY);
-        } else {
-            inputSeparation = true;
-        }
     }
 }

@@ -1,6 +1,4 @@
-package com.jdz.noae.mixins.late;
-
-import net.minecraft.nbt.NBTTagCompound;
+package com.jdz.noae.mixins.late.InputSeparation;
 
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
@@ -22,16 +20,5 @@ abstract class InputSeparationZyngen extends MTEMultiBlockBase {
     @Overwrite(remap = false)
     public boolean isInputSeparationEnabled() {
         return super.isInputSeparationEnabled();
-    }
-
-    @Override
-    public void loadNBTData(NBTTagCompound aNBT) {
-        super.loadNBTData(aNBT);
-
-        if (aNBT.hasKey(INPUT_SEPARATION_NBT_KEY)) {
-            inputSeparation = aNBT.getBoolean(INPUT_SEPARATION_NBT_KEY);
-        } else {
-            inputSeparation = true;
-        }
     }
 }
