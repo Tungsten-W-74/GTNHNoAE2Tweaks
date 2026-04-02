@@ -10,7 +10,9 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
     name = "GTNHNoAETweaks",
     acceptedMinecraftVersions = "[1.7.10]",
     acceptableRemoteVersions = "*",
-    dependencies = "required-after:gregtech")
+    dependencies = """
+        required-after:gregtech;\
+        required-after:ae2fc;""")
 public class GTNHNoAETweaks {
 
     public static final String MODID = "gtnhnoaetweaks";

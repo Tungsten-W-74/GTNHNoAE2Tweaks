@@ -49,6 +49,12 @@ public class LateMixinsLoader implements ILateMixinLoader {
             mixins.add("RecipeLock.RecipeLockCutter");
             mixins.add("RecipeLock.RecipeLockMacerator");
             mixins.add("RecipeLock.RecipeLockWasher");
+            mixins.add("RecipeLock.RecipeLockHammer");
+            mixins.add("RecipeLock.RecipeLockImplosion");
+            mixins.add("RecipeLock.RecipeLockImplosionAdv");
+            mixins.add("RecipeLock.RecipeLockImplosionElectric");
+            mixins.add("RecipeLock.RecipeLockZyngen");
+            mixins.add("RecipeLock.RecipeLockSmelter");
         }
 
         return mixins;

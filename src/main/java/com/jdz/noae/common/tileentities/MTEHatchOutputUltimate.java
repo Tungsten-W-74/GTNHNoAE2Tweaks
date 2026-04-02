@@ -15,6 +15,8 @@ import net.minecraft.util.EnumChatFormatting;
 import net.minecraftforge.common.util.ForgeDirection;
 import net.minecraftforge.fluids.FluidStack;
 
+import com.glodblock.github.loader.ItemAndBlockHolder;
+
 import gregtech.api.enums.GTValues;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.MaterialsUEVplus;
@@ -38,7 +40,7 @@ public class MTEHatchOutputUltimate extends MTEHatchOutput {
         GTValues.RA.stdBuilder()
             .itemInputs(
                 ItemList.Hatch_Output_UXV.get(1L),
-                // ItemAndBlockHolder.SINGULARITY_CELL.stack(1),
+                ItemAndBlockHolder.SINGULARITY_CELL.stack(1),
                 GTUtility.getIntegratedCircuit(17))
             .fluidInputs(MaterialsUEVplus.Universium.getMolten(4 * INGOTS))
             .itemOutputs(instance)
