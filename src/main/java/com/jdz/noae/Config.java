@@ -13,6 +13,7 @@ public class Config {
     public static boolean NoAEEOH = true;
     public static boolean NoAEGorge = true;
     public static boolean InfiniteOutputHatch = true;
+    public static int ItemRegulatorInterval = 200;
 
     public static void load(File file) {
         Configuration configuration = new Configuration(file);
@@ -51,7 +52,14 @@ public class Config {
             "InfiniteOutputHatch",
             Configuration.CATEGORY_GENERAL,
             InfiniteOutputHatch,
-            "Adds a UXV-gated output hatch with infinite capacity.");
+            "Adds a UXV-gated output hatch with infinite capacity");
+        ItemRegulatorInterval = configuration.getInt(
+            "ItemRegulatorInterval",
+            Configuration.CATEGORY_GENERAL,
+            ItemRegulatorInterval,
+            1,
+            200,
+            "Change the game's default tick interval for item regulators");
 
         configuration.save();
     }
