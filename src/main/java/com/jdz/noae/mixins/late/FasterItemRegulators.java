@@ -1,8 +1,9 @@
 package com.jdz.noae.mixins.late;
 
-import com.jdz.noae.Config;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
+
+import com.jdz.noae.Config;
 
 import gregtech.api.interfaces.tileentity.IGregTechTileEntity;
 import gregtech.api.metatileentity.implementations.MTEBuffer;
