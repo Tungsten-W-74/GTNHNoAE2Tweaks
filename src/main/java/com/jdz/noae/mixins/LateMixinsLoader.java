@@ -64,6 +64,7 @@ public class LateMixinsLoader implements ILateMixinLoader {
             mixins.add("RecipeLock.RecipeLockOreFactory");
             mixins.add("RecipeLock.RecipeLockSolarFactory");
             mixins.add("RecipeLock.RecipeLockVolcanus");
+            mixins.add("RecipeLock.RecipeLockDTPF");
         }
 
         return mixins;
