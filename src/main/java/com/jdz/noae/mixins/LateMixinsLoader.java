@@ -34,6 +34,7 @@ public class LateMixinsLoader implements ILateMixinLoader {
             mixins.add("InputSeparation.InputSeparationIndustrialPress");
             mixins.add("InputSeparation.InputSeparationPreciseAssembler");
             mixins.add("InputSeparation.InputSeparationZyngen");
+            mixins.add("InputSeparation.InputSeparationBHC");
         }
 
         if (Config.MoreRecipeLocking) {
@@ -55,6 +56,14 @@ public class LateMixinsLoader implements ILateMixinLoader {
             mixins.add("RecipeLock.RecipeLockImplosionElectric");
             mixins.add("RecipeLock.RecipeLockZyngen");
             mixins.add("RecipeLock.RecipeLockSmelter");
+            mixins.add("RecipeLock.RecipeLockCentrifuge");
+            mixins.add("RecipeLock.RecipeLockDEFusionCrafter");
+            mixins.add("RecipeLock.RecipeLockElectrolyzer");
+            mixins.add("RecipeLock.RecipeLockMEBF");
+            mixins.add("RecipeLock.RecipeLockMegaVac");
+            mixins.add("RecipeLock.RecipeLockOreFactory");
+            mixins.add("RecipeLock.RecipeLockSolarFactory");
+            mixins.add("RecipeLock.RecipeLockVolcanus");
         }
 
         return mixins;
