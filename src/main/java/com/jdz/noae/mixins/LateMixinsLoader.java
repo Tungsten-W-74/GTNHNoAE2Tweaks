@@ -23,6 +23,8 @@ public class LateMixinsLoader implements ILateMixinLoader {
     public List<String> getMixins(Set<String> loadedMods) {
         List<String> mixins = new ArrayList<>();
 
+        mixins.add("NanoForgeBusLimit");
+
         if (Config.DisableAE) mixins.add("DisableAE");
 
         if (Config.AALLIB) mixins.add("LinkedInputBusAALCompat");
